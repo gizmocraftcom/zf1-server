@@ -20,6 +20,7 @@
  * @version $Id$
  */
 
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Test case for Zend_Server_Reflection_Function
@@ -29,8 +30,8 @@
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Server
  */
+#[Group('Zend_Server')]
 class Zend_Server_Reflection_FunctionTest extends PHPUnit\Framework\TestCase
 {
     public function test__construct()
@@ -162,9 +163,7 @@ class Zend_Server_Reflection_FunctionTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('string', $params[0]->getType());
     }
 
-    /**
-     * @group ZF-6996
-     */
+    #[Group('ZF-6996')]
     public function testParameterReflectionShouldReturnTypeAndVarnameAndDescription()
     {
         $function = new ReflectionFunction('Zend_Server_Reflection_FunctionTest_function');

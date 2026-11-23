@@ -20,6 +20,7 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Test class for Zend_Server_Method_Definition
@@ -29,8 +30,8 @@
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Server
  */
+#[Group('Zend_Server')]
 class Zend_Server_Method_DefinitionTest extends PHPUnit\Framework\TestCase
 {
     protected $definition;
@@ -117,8 +118,6 @@ class Zend_Server_Method_DefinitionTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($object, $this->definition->getObject());
     }
 
-    /**
-     */
     public function testSettingObjectToNonObjectShouldThrowException()
     {
         $this->expectException(\Zend_Server_Exception::class);
